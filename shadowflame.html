@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML to PDF Template</title>
+
+    <!-- 1. Include the html2pdf.js library via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* This is the container we will export as PDF */
+        #content-to-export {
+            background-color: white;
+            width: 800px;
+            /* A standard width usually works best */
+            min-height: 1000px;
+            /* Simulating an A4 page height */
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Styling for the download button */
+        #download-btn {
+            padding: 12px 24px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1600px;
+            margin-bottom: 100px;
+            height: 3750px;
+        }
+
+        #download-btn:hover {
+            background-color: darkgreen;
+        }
+
+        h1,
+        h3 {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h3 {
+            color: purple;
+        }
+
+        .textHead {
+            margin-top: 25px;
+            text-align: left;
+            margin-left: 50px;
+            font-size: x-large;
+            font-size: 30px;
+        }
+
+        .firstHead {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Button to trigger the download -->
+    <button id="download-btn">Download as PDF</button>
+
+    <!-- 2. The specific container to be converted -->
+    <div id="content-to-export">
+        <h1 style="font-size: 50px;">Species documentation</h1>
+        <h3 style="font-size: 25px;">Shadowflame Elemental</h3>
+
+        <hr>
+
+        <h3 class="textHead firstHead">
+            Description
+        </h3>
+
+        <p>
+            Shadowflame Elementals are humanoid creatures constantly covered in what we call "Shadow flames". They are
+            constantly on fire, capable of burning even without any source of fuel or oxygen.
+        </p>
+
+        <p>Apart from eternally being on fire, most of them make themselves some sort of armor at a young age to
+            differentiate each other. Each member of the species has a different eye color, and they mostly make armor
+            matching of said color. Each Shadowflame has a different colored eye, but on the offchance that there are
+            two extremely similar ones, they have a rule to wear something that differentiates them from one another.
+        </p>
+
+        <p>Shadowflames are intelligent creatures, first learning the basic ways by mimicing others' forms and actions.
+            After a while, once they have learned everything needed for survival, they start learning by themselves,
+            exploring their abilities, strengths and weaknesses.</p>
+
+        <p>Shadowflames, while capable of entering water, can't stay under for long periods of time without proper
+            equipment as their flames are likely to die out.</p>
+
+        <br>
+        <br>
+
+        <h3 class="textHead">Abilities</h3>
+
+        <p>From birth, Shadowflames are able to manipulate their own flames as well as mimic other forms, completely
+            inheriting their strengths, flaws and abilities. While these abilities are on the most basic of levels, they
+            can still be used for quite a variety of things like self-defense and basic offense.
+        </p>
+
+        <p>As they start exploring their abilities more, they'll realize that these abilities can be used for many other
+            things like transportation, assistance, slow healing or boosting movement.
+        </p>
+
+        <p>Their real strength lies in their ridiculous creativity, capable of solving most problems with their own
+            creations.
+        </p>
+
+        <br>
+        <br>
+
+        <h3 class="textHead">Origins</h3>
+
+        <p>Shadowflames originate from a planet called </p>
+
+        <p>You can add images, tables, and standard HTML elements here. The library captures the styles as they appear
+            on the screen.</p>
+
+        <table border="1" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+            <tr style="background-color: #eee;">
+                <th style="padding: 10px;">Item</th>
+                <th style="padding: 10px;">Description</th>
+                <th style="padding: 10px;">Cost</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Service A</td>
+                <td style="padding: 10px;">Consultation fee</td>
+                <td style="padding: 10px;">$150.00</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Service B</td>
+                <td style="padding: 10px;">Development hours</td>
+                <td style="padding: 10px;">$400.00</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        // Set the current date for the demo
+        document.getElementById('current-date').innerText = new Date().toLocaleDateString();
+
+        // 3. Script to handle the export
+        document.getElementById('download-btn').addEventListener('click', function () {
+
+            // Choose the element that our invoice is rendered within.
+            const element = document.getElementById('content-to-export');
+
+            // Choose the element and save the PDF for our user.
+            const opt = {
+                margin: 1,
+                filename: 'my-document.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+
+            // New Promise-based usage:
+            html2pdf().set(opt).from(element).save();
+        });
+    </script>
+</body>
+
+</html>
