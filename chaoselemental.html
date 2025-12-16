@@ -9,10 +9,17 @@
     <!-- 1. Include the html2pdf.js library via CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
+    <!-- 2. Import a font that looks similar to the reference image (Fredoka is rounded and friendly) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            /* Dark background for the page outside the document */
+            background-color: #121212;
+            font-family: 'Fredoka', sans-serif;
+            /* Applied the new font */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -21,40 +28,90 @@
 
         /* This is the container we will export as PDF */
         #content-to-export {
-            background-color: white;
+            /* Dark Card Background */
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            /* Light text color */
+
             width: 800px;
-            /* A standard width usually works best */
             min-height: 1000px;
-            /* Simulating an A4 page height */
             padding: 40px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+            /* Rounded corners like the reference image */
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             margin-bottom: 20px;
         }
 
         h1 {
-            color: #333;
+            /* Peach/Orange color from reference */
+            color: #ffffff;
+            text-transform: uppercase;
+            /* Optional: Makes it look more like a title */
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            /* Peach/Orange color from reference */
+            color: #748086;
+            font-weight: 400;
         }
 
         p {
             line-height: 1.6;
-            color: #555;
+            color: #cccccc;
+            /* Slightly dimmer white for body text */
+            font-size: 18px;
+            /* Slightly larger for the rounded font */
+        }
+
+        hr {
+            border-color: #444;
+            /* Darker line divider */
+            margin: 20px 0;
         }
 
         /* Styling for the download button */
         #download-btn {
             padding: 12px 24px;
-            background-color: green;
-            color: white;
+            background-color: #ffad60;
+            /* Match the theme */
+            color: #1e1e1e;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 1600px;
-            margin-bottom: 100px;
-            height: 3750px;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 30px;
         }
 
         #download-btn:hover {
-            background-color: darkgreen;
+            background-color: #e5954d;
+        }
+
+        h1,
+        h3 {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .textHead {
+            margin-top: 30px;
+            text-align: left;
+            margin-left: 0;
+            /* Removed indent to look cleaner in the card style */
+            font-size: 28px;
+            border-bottom: 2px solid #748086;
+            /* Added a small underline style */
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .firstHead {
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -64,56 +121,114 @@
     <!-- Button to trigger the download -->
     <button id="download-btn">Download as PDF</button>
 
+    <h1>!!! THIS DOCUMENTATION IS A WORK IN PROGRESS !!!</h1>
+
     <!-- 2. The specific container to be converted -->
     <div id="content-to-export">
-        <h1>Invoice / Report Header</h1>
+        <h1 style="font-size: 50px;">Species Documentation</h1>
+        <h3 style="font-size: 25px;">Chaos Elemental</h3>
+
         <hr>
-        <h3>Date: <span id="current-date"></span></h3>
 
-        <p>This is a sample document that will be converted to PDF.</p>
+        <h3 class="textHead firstHead">
+            Description
+        </h3>
 
-        <p>You can add images, tables, and standard HTML elements here. The library captures the styles as they appear
-            on the screen.</p>
+        <p>
+            Chaos Elementals are humanoid creatures whose skin never stays still, constantly changing and shifting.
+            Despite
+            this volatility, they maintain a very stationary silhouette, making them recognizable as humanoids. Their
+            skin is composed of
+            a dust-like substance which completely dissipates upon leaving their immediate area.
+        </p>
 
-        <table border="1" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
-            <tr style="background-color: #eee;">
-                <th style="padding: 10px;">Item</th>
-                <th style="padding: 10px;">Description</th>
-                <th style="padding: 10px;">Cost</th>
-            </tr>
-            <tr>
-                <td style="padding: 10px;">Service A</td>
-                <td style="padding: 10px;">Consultation fee</td>
-                <td style="padding: 10px;">$150.00</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px;">Service B</td>
-                <td style="padding: 10px;">Development hours</td>
-                <td style="padding: 10px;">$400.00</td>
-            </tr>
-        </table>
+        <p>Chaos Elementals can easily be differentiated from one another by the material of their skin and their
+            individual forms.
+            While their eye color may also vary between individuals, this is a highly unlikely occurrence.
+        </p>
+
+        <p>Chaos Elementals are intelligent creatures, possessing a life cycle similar to that of humans.
+            They appear small at birth but grow at a faster rate than humans.</p>
+
+        <p>Chaos Elementals are fully resistant to natural liquids, including water. However, their preferred
+            environment is deep caves or highly dusty areas.</p>
+
+        <br>
+        <br>
+
+        <h3 class="textHead">Abilities</h3>
+
+        <p>Chaos Elementals become accustomed to their abilities almost immediately after birth. They possess powers
+            capable of space manipulation, teleportation, and mind control. Their main strength lies in their ability to
+            influence minds and create illusions.
+        </p>
+
+        <p>While it is impossible to physically observe which specific ability a Chaos Elemental is preparing, it
+            often becomes obvious, as powerful abilities take longer to execute.</p>
+
+        <br>
+        <br>
+
+        <h3 class="textHead">Origins</h3>
+
+        <p>Chaos Elementals do not originate from a specific planet but can be found anywhere in the universe. They are
+            born from the dust of deep caverns, which is then mixed with several different materials found within the
+            cave,
+            such as dust from ores, gems, or regular stone.</p>
+
+        <br>
+        <br>
+
+        <h3 class="textHead">Anatomy</h3>
+
+        <p>Chaos Elementals differ from humans in terms of anatomy, as they possess only a core. This core
+            functions as their heart.</p>
+
+        <p>Their only biological similarity to humans is the possession of human-like reproductive organs.</p>
+
+        <p>Chaos Elementals do not possess a nose or mouth. However, despite the lack of a nose, they can
+            still smell, and despite the lack of a mouth, they can speak. No one knows exactly how these features work,
+            but it is
+            widely assumed that they speak by manipulating sound waves around them.</p>
+
+        <br>
+        <br>
+
+        <h3 class="textHead">Dietary Habits</h3>
+
+        <p> // UNKNOWN DATA //
+        </p>
+
+        <br>
+        <br>
+
+        <h3 class="textHead">Social Structure</h3>
+
+        <p>Chaos Elementals, while often starting out solitary or within small groups, are extremely social creatures.
+            They have a deep
+            understanding of others' problems and can provide excellent mental support if one manages to befriend them.
+        </p>
+
+        <p>Unfortunately, Chaos Elementals often appear hostile at first toward other races. Despite this, they mainly
+            observe and stare; unless provoked, you will not have to face one in battle.</p>
     </div>
 
     <script>
-        // Set the current date for the demo
-        document.getElementById('current-date').innerText = new Date().toLocaleDateString();
-
-        // 3. Script to handle the export
         document.getElementById('download-btn').addEventListener('click', function () {
-
-            // Choose the element that our invoice is rendered within.
             const element = document.getElementById('content-to-export');
 
-            // Choose the element and save the PDF for our user.
+            // Note: Generating PDFs with dark backgrounds consumes a lot of ink.
+            // If you want the PDF to be white but the site to be dark, 
+            // you would need to swap the CSS classes before generating.
+            // Currently, this will generate a dark PDF.
             const opt = {
-                margin: 1,
-                filename: 'my-document.pdf',
+                margin: 0.5,
+                filename: 'ChaosElemental_Documentation.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
+                html2canvas: { scale: 2, backgroundColor: '#1e1e1e' }, // Ensures canvas background matches
                 jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
             };
 
-            // New Promise-based usage:
             html2pdf().set(opt).from(element).save();
         });
     </script>

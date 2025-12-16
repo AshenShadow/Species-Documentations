@@ -9,10 +9,17 @@
     <!-- 1. Include the html2pdf.js library via CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
+    <!-- 2. Import a font that looks similar to the reference image (Fredoka is rounded and friendly) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            /* Dark background for the page outside the document */
+            background-color: #121212;
+            font-family: 'Fredoka', sans-serif;
+            /* Applied the new font */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -21,40 +28,90 @@
 
         /* This is the container we will export as PDF */
         #content-to-export {
-            background-color: white;
+            /* Dark Card Background */
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            /* Light text color */
+
             width: 800px;
-            /* A standard width usually works best */
             min-height: 1000px;
-            /* Simulating an A4 page height */
             padding: 40px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+            /* Rounded corners like the reference image */
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             margin-bottom: 20px;
         }
 
         h1 {
-            color: #333;
+            /* Peach/Orange color from reference */
+            color: #ffffff;
+            text-transform: uppercase;
+            /* Optional: Makes it look more like a title */
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            /* Peach/Orange color from reference */
+            color: #6fbbdf;
+            font-weight: 400;
         }
 
         p {
             line-height: 1.6;
-            color: #555;
+            color: #cccccc;
+            /* Slightly dimmer white for body text */
+            font-size: 18px;
+            /* Slightly larger for the rounded font */
+        }
+
+        hr {
+            border-color: #444;
+            /* Darker line divider */
+            margin: 20px 0;
         }
 
         /* Styling for the download button */
         #download-btn {
             padding: 12px 24px;
-            background-color: green;
-            color: white;
+            background-color: #ffad60;
+            /* Match the theme */
+            color: #1e1e1e;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 1600px;
-            margin-bottom: 100px;
-            height: 3750px;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 30px;
         }
 
         #download-btn:hover {
-            background-color: darkgreen;
+            background-color: #e5954d;
+        }
+
+        h1,
+        h3 {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .textHead {
+            margin-top: 30px;
+            text-align: left;
+            margin-left: 0;
+            /* Removed indent to look cleaner in the card style */
+            font-size: 28px;
+            border-bottom: 2px solid #6fbbdf;
+            /* Added a small underline style */
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .firstHead {
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -64,56 +121,130 @@
     <!-- Button to trigger the download -->
     <button id="download-btn">Download as PDF</button>
 
+    <h1>!!! THIS DOCUMENTATION IS A WORK IN PROGRESS !!!</h1>
+
     <!-- 2. The specific container to be converted -->
     <div id="content-to-export">
-        <h1>Invoice / Report Header</h1>
+        <h1 style="font-size: 50px;">Species Documentation</h1>
+        <h3 style="font-size: 25px;">Divineflame Elemental</h3>
+
         <hr>
-        <h3>Date: <span id="current-date"></span></h3>
 
-        <p>This is a sample document that will be converted to PDF.</p>
+        <h3 class="textHead firstHead">
+            Description
+        </h3>
 
-        <p>You can add images, tables, and standard HTML elements here. The library captures the styles as they appear
-            on the screen.</p>
+        <p>
+            Divineflame Elementals are humanoid creatures whose distinct features—such as hair, hands, and legs—burn
+            with what are known as "Divine Flames". These flames are capable of burning eternally without any source of
+            fuel.
+            As long as the Divineflame Elemental is alive, these flames will never extinguish.
+        </p>
 
-        <table border="1" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
-            <tr style="background-color: #eee;">
-                <th style="padding: 10px;">Item</th>
-                <th style="padding: 10px;">Description</th>
-                <th style="padding: 10px;">Cost</th>
-            </tr>
-            <tr>
-                <td style="padding: 10px;">Service A</td>
-                <td style="padding: 10px;">Consultation fee</td>
-                <td style="padding: 10px;">$150.00</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px;">Service B</td>
-                <td style="padding: 10px;">Development hours</td>
-                <td style="padding: 10px;">$400.00</td>
-            </tr>
-        </table>
+        <p>Divineflame Elementals can easily be differentiated from one another by their hairstyles,
+            the intensity of their flames, and most obviously, their clothing.
+        </p>
+
+        <p>Divineflames are intelligent creatures, possessing a life cycle similar to that of humans.
+            They appear small at birth but grow at a faster rate than humans.</p>
+
+        <p>Divineflames are fully resistant to natural liquids, including water. However, their preferred environment
+            is pure molten rock: lava.</p>
+
+        <br>
+        <br>
+
+        <h3 class="textHead">Abilities</h3>
+
+        <p>Divineflames can take up to 35 years to become accustomed to their abilities. They possess healing
+            powers superior to most other species, though their offensive capabilities are rather weak by comparison.
+            However, their main
+            strength comes from their charm and creativity, as they are capable of conceptualizing many solutions
+            despite lacking the
+            mastery to fully manifest them.
+        </p>
+
+        <p>The color and intensity of a Divineflame's aura can often shift temporarily depending on the abilities being
+            used. For example, most healing abilities will tint their flames a lighter green, while offensive
+            abilities will shift the color to shades ranging from red to orange.</p>
+
+        <br>
+        <br>
+
+        <h3 class="textHead">Origins</h3>
+
+        <p>Divineflames originate from a planet called DVF-45CSP, later dubbed as Luminos-Major. This planet
+            resides in an
+            unstable blue star system, but is now uninhabitable due to a cataclysmic event that shattered part of the
+            planet's
+            crust into its orbit.</p>
+
+        <p>Divineflames originated from the system's star, having been ejected rapidly toward the planet during a solar
+            flare.
+            Following this event, the species populated the planet until its inevitable destruction.</p>
+
+        <br>
+        <br>
+
+        <h3 class="textHead">Anatomy</h3>
+
+        <p>Divineflames are similar to humans in terms of anatomy. They possess almost everything a human does: a
+            flaming heart, a
+            digestive tract, and even the same means of reproduction. The primary difference lies in their lungs,
+            which are capable of functioning efficiently even when inhaling toxic substances or in the absence of
+            breathable air.</p>
+
+        <p>Another key difference in their organic structure is the set of flaming rings surrounding their heart, which
+            function as the
+            source of their abilities. Destroying these rings provides a significant advantage against them, as it
+            significantly impairs their healing efficiency.</p>
+
+        <p>Exterior anatomy shows that they appear to have no visible mouths. However, even though it is not visible,
+            the mouth is present. The main reason for this concealment is their lightly burning skin, where
+            flames bridge the lips together, creating the illusion of a featureless face.</p>
+
+        <br>
+        <br>
+
+        <h3 class="textHead">Dietary Habits</h3>
+
+        <p>While Divineflames possess a digestive tract, they derive very little nutrition from organic plant or animal
+            matter. They can survive without eating for years, though they do occasionally enjoy consuming proper meals.
+        </p>
+
+        <br>
+        <br>
+
+        <h3 class="textHead">Social Structure</h3>
+
+        <p>Unlike humans, Divineflames are somewhat reclusive creatures by nature. Despite this, socialization is by no
+            means a weakness.</p>
+
+        <p>A key aspect of their social life was the lack of a defined "Leader" on their home planet.
+            All Divineflames were permitted to do as they wished, provided their actions did not disturb others. Their
+            primary methods for resolving conflict were often cross-family bonding or civil discussion. They generally
+            maintained their composure and avoided starting wars over meaningless territorial disputes.</p>
+
+        <p>Unfortunately, this structure is rarely seen today; since the destruction of Luminos-Major, it is
+            unknown how many Divineflame Elementals remain scattered across space.</p>
     </div>
 
     <script>
-        // Set the current date for the demo
-        document.getElementById('current-date').innerText = new Date().toLocaleDateString();
-
-        // 3. Script to handle the export
         document.getElementById('download-btn').addEventListener('click', function () {
-
-            // Choose the element that our invoice is rendered within.
             const element = document.getElementById('content-to-export');
 
-            // Choose the element and save the PDF for our user.
+            // Note: Generating PDFs with dark backgrounds consumes a lot of ink.
+            // If you want the PDF to be white but the site to be dark, 
+            // you would need to swap the CSS classes before generating.
+            // Currently, this will generate a dark PDF.
             const opt = {
-                margin: 1,
-                filename: 'my-document.pdf',
+                margin: 0.5,
+                filename: 'Divineflame_Documentation.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
+                html2canvas: { scale: 2, backgroundColor: '#1e1e1e' }, // Ensures canvas background matches
                 jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
             };
 
-            // New Promise-based usage:
             html2pdf().set(opt).from(element).save();
         });
     </script>

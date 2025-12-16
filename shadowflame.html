@@ -9,10 +9,17 @@
     <!-- 1. Include the html2pdf.js library via CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
+    <!-- 2. Import a font that looks similar to the reference image (Fredoka is rounded and friendly) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            /* Dark background for the page outside the document */
+            background-color: #121212;
+            font-family: 'Fredoka', sans-serif;
+            /* Applied the new font */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -21,40 +28,67 @@
 
         /* This is the container we will export as PDF */
         #content-to-export {
-            background-color: white;
+            /* Dark Card Background */
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            /* Light text color */
+
             width: 800px;
-            /* A standard width usually works best */
             min-height: 1000px;
-            /* Simulating an A4 page height */
             padding: 40px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+            /* Rounded corners like the reference image */
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             margin-bottom: 20px;
         }
 
         h1 {
-            color: #333;
+            /* Peach/Orange color from reference */
+            color: #ffffff;
+            text-transform: uppercase;
+            /* Optional: Makes it look more like a title */
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            /* Peach/Orange color from reference */
+            color: #8300a3;
+            font-weight: 400;
         }
 
         p {
             line-height: 1.6;
-            color: #555;
+            color: #cccccc;
+            /* Slightly dimmer white for body text */
+            font-size: 18px;
+            /* Slightly larger for the rounded font */
+        }
+
+        hr {
+            border-color: #444;
+            /* Darker line divider */
+            margin: 20px 0;
         }
 
         /* Styling for the download button */
         #download-btn {
             padding: 12px 24px;
-            background-color: green;
-            color: white;
+            background-color: #ffad60;
+            /* Match the theme */
+            color: #1e1e1e;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 1600px;
-            margin-bottom: 100px;
-            height: 3750px;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 30px;
         }
 
         #download-btn:hover {
-            background-color: darkgreen;
+            background-color: #e5954d;
         }
 
         h1,
@@ -64,16 +98,16 @@
             padding: 0;
         }
 
-        h3 {
-            color: purple;
-        }
-
         .textHead {
-            margin-top: 25px;
+            margin-top: 30px;
             text-align: left;
-            margin-left: 50px;
-            font-size: x-large;
-            font-size: 30px;
+            margin-left: 0;
+            /* Removed indent to look cleaner in the card style */
+            font-size: 28px;
+            border-bottom: 2px solid #8300a3;
+            /* Added a small underline style */
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
         .firstHead {
@@ -87,9 +121,11 @@
     <!-- Button to trigger the download -->
     <button id="download-btn">Download as PDF</button>
 
+    <h1>!!! THIS DOCUMENTATION IS A WORK IN PROGRESS !!!</h1>
+
     <!-- 2. The specific container to be converted -->
     <div id="content-to-export">
-        <h1 style="font-size: 50px;">Species documentation</h1>
+        <h1 style="font-size: 50px;">Species Documentation</h1>
         <h3 style="font-size: 25px;">Shadowflame Elemental</h3>
 
         <hr>
@@ -105,13 +141,13 @@
 
         <p>Apart from eternally being on fire, most of them make themselves some sort of armor at a young age to
             differentiate each other. Each member of the species has a different eye color, and they mostly make armor
-            matching of said color. Each Shadowflame has a different colored eye, but on the offchance that there are
+            matching said color. Each Shadowflame has a different colored eye, but on the off-chance that there are
             two extremely similar ones, they have a rule to wear something that differentiates them from one another.
         </p>
 
-        <p>Shadowflames are intelligent creatures, first learning the basic ways by mimicing others' forms and actions.
+        <p>Shadowflames are intelligent creatures, first learning the basic ways by mimicking others' forms and actions.
             After a while, once they have learned everything needed for survival, they start learning by themselves,
-            exploring their abilities, strengths and weaknesses.</p>
+            exploring their abilities, strengths, and weaknesses.</p>
 
         <p>Shadowflames, while capable of entering water, can't stay under for long periods of time without proper
             equipment as their flames are likely to die out.</p>
@@ -122,67 +158,105 @@
         <h3 class="textHead">Abilities</h3>
 
         <p>From birth, Shadowflames are able to manipulate their own flames as well as mimic other forms, completely
-            inheriting their strengths, flaws and abilities. While these abilities are on the most basic of levels, they
+            inheriting their strengths, flaws, and abilities. While these abilities are on the most basic of levels,
+            they
             can still be used for quite a variety of things like self-defense and basic offense.
         </p>
 
         <p>As they start exploring their abilities more, they'll realize that these abilities can be used for many other
-            things like transportation, assistance, slow healing or boosting movement.
+            things like transportation, assistance, slow healing, or boosting movement.
         </p>
 
         <p>Their real strength lies in their ridiculous creativity, capable of solving most problems with their own
             creations.
         </p>
 
+        <p>The color and intensity of a Shadowflame's aura can often shift temporarily depending on the abilities it
+            uses. For example, most healing abilities will tint their flames a light green, while many offensive
+            abilities will shift the color to shades ranging from red to orange.</p>
+
         <br>
         <br>
 
         <h3 class="textHead">Origins</h3>
 
-        <p>Shadowflames originate from a planet called </p>
+        <p>Shadowflames originate from a planet called Pyronyx Prime. It's the closest planet to a purple star, giving
+            it a natural purple atmosphere with next to no clouds.</p>
 
-        <p>You can add images, tables, and standard HTML elements here. The library captures the styles as they appear
-            on the screen.</p>
+        <p>The planet itself is quite dangerous for any other species despite its beautiful and exotic surface, having
+            many unique species of flora and fauna.</p>
 
-        <table border="1" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
-            <tr style="background-color: #eee;">
-                <th style="padding: 10px;">Item</th>
-                <th style="padding: 10px;">Description</th>
-                <th style="padding: 10px;">Cost</th>
-            </tr>
-            <tr>
-                <td style="padding: 10px;">Service A</td>
-                <td style="padding: 10px;">Consultation fee</td>
-                <td style="padding: 10px;">$150.00</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px;">Service B</td>
-                <td style="padding: 10px;">Development hours</td>
-                <td style="padding: 10px;">$400.00</td>
-            </tr>
-        </table>
+        <p>The main reason this isn't particularly dangerous to the Shadowflame species is the location of their birth.
+        </p>
+
+        <p>Nearly all Shadowflames were born in the Pyronyx Prime's core, only being spit out when the chain eruption
+            happened on the surface upon the core's awakening. This very awakening is also the reason
+            that the planet's surface is habitable, despite the dangers.</p>
+
+        <br>
+        <br>
+
+        <h3 class="textHead">Anatomy</h3>
+
+        <p>Shadowflames are similar to humans in terms of anatomy. They have everything a human has: a flaming heart and
+            a
+            digestive tract; they even have the means of reproduction humans do. The only difference is their lack of
+            proper lungs. Despite this, they can breathe just like any normal human can. Instead of lungs, they have a
+            separate chamber-like organ that can keep air within for an extended period of time. This chamber is what's
+            used to re-ignite the flames of an extinguished Shadowflame.</p>
+
+        <p>Another key difference in their organic structure is the flaming rings around their heart, functioning as a
+            source of their abilities. However, destroying these rings by any means will not hand you an advantage as
+            they have adapted to physical combat as much as magical combat.</p>
+
+        <p>Exterior anatomy shows that they appear to have no visible mouths. However, even though it's not visible,
+            it's still very much there. The main reason for their mouths not being visible is their burning skin, where
+            flames connect the lips together, making it look like they have no mouth.</p>
+
+        <br>
+        <br>
+
+        <h3 class="textHead">Dietary Habits</h3>
+
+        <p>While Shadowflames possess a digestive tract, they derive very little nutrition from organic plant or animal
+            matter. They can survive without eating for years, though they do enjoy consuming proper meals occasionally.
+        </p>
+
+        <br>
+        <br>
+
+        <h3 class="textHead">Social Structure</h3>
+
+        <p>Similar to humans, Shadowflames are somewhat social creatures by nature. While they possess a higher
+            tolerance
+            for solitude and can remain isolated for decades at a time, their social lives bear many similarities to
+            humanity. They organize events, host parties, and attend schools; they even possess romantic and
+            marital structures similar to those of humans.</p>
+
+        <p>Another key aspect of their social life is that they have no defined "Leader" on their home planet.
+            All Shadowflames are permitted to do as they wish, provided their actions do not disturb others. Their
+            primary
+            methods for resolving conflict are often cross-family bonding or civil discussion. Unlike humans, however,
+            they
+            generally maintain their composure and avoid starting wars over meaningless territorial disputes.</p>
     </div>
 
     <script>
-        // Set the current date for the demo
-        document.getElementById('current-date').innerText = new Date().toLocaleDateString();
-
-        // 3. Script to handle the export
         document.getElementById('download-btn').addEventListener('click', function () {
-
-            // Choose the element that our invoice is rendered within.
             const element = document.getElementById('content-to-export');
 
-            // Choose the element and save the PDF for our user.
+            // Note: Generating PDFs with dark backgrounds consumes a lot of ink.
+            // If you want the PDF to be white but the site to be dark, 
+            // you would need to swap the CSS classes before generating.
+            // Currently, this will generate a dark PDF.
             const opt = {
-                margin: 1,
-                filename: 'my-document.pdf',
+                margin: 0.5,
+                filename: 'Shadowflame_Documentation.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
+                html2canvas: { scale: 2, backgroundColor: '#1e1e1e' }, // Ensures canvas background matches
                 jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
             };
 
-            // New Promise-based usage:
             html2pdf().set(opt).from(element).save();
         });
     </script>
